@@ -1,10 +1,6 @@
 import { toast } from 'react-toastify';
 
-export function generateRandomSequence(
-  min: number,
-  max: number,
-  count: number = max - min + 1
-): number[] {
+export function generateRandomSequence(min: number, max: number, count: number = max - min + 1): number[] {
   const numbers: number[] = [];
   let range: number = max - min + 1;
 
@@ -17,9 +13,7 @@ export function generateRandomSequence(
 
   if (count > range) {
     toast.error('Não é possível gerar uma sequência com mais números do que o intervalo');
-    throw new Error(
-      'Não é possível gerar uma sequência com mais números do que o intervalo'
-    );
+    throw new Error('Não é possível gerar uma sequência com mais números do que o intervalo');
   }
 
   while (numbers.length < count) {
