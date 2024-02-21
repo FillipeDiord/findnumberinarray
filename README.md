@@ -18,7 +18,7 @@ Por exemplo, se o vetor tem 1000 elementos, você precisa fazer no máximo 10 co
 
 ##### Vitest - [Documentação](https://vitest.dev/guide/) <img src="https://user-images.githubusercontent.com/11247099/145112184-a9ff6727-661c-439d-9ada-963124a281f7.png" alt="Vitest" width="25"/>
 
-##### Tailwindcss - [Documentação](https://v2.tailwindcss.com/docs) <img src="https://picperf.io/https://laravelnews.s3.amazonaws.com/images/tailwindcss-1633184775.jpg" alt="Tailwindcss" width="25"/>
+##### Tailwindcss - [Documentação](https://v2.tailwindcss.com/docs) <img src="https://user-images.githubusercontent.com/98990/89711240-4172a200-d989-11ea-8d51-4aaf922fa407.png" alt="Tailwindcss" width="25"/>
 
 ## Iniciando o projeto
 
