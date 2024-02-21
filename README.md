@@ -1,30 +1,57 @@
-# React + TypeScript + Vite
+# Busca o determinado índice do número em um Array
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#### Algoritmo utilizado na busca do índice
 
-Currently, two official plugins are available:
+O Algoritmo que foi utilizado é o de busca binária, que procura um elemento em um vetor ordenado
+dividindo-o pela metade a cada passo. A complexidade de tempo dessa função é O(log N),
+pois a cada iteração o tamanho do problema é reduzido pela metade.
+Isso significa que você precisa fazer no máximo log N comparações para encontrar o elemento desejado ou determinar que ele não está no vetor.
+Por exemplo, se o vetor tem 1000 elementos, você precisa fazer no máximo 10 comparações, pois 2^10 = 1024
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologias utilizadas
 
-## Expanding the ESLint configuration
+##### React - [Documentação](https://react.dev/learn) <img src="https://cdn.iconscout.com/icon/free/png-256/free-react-1-282599.png" alt="React" width="25"/>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+##### Typescript - [Documentação](https://www.typescriptlang.org/docs/) <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png" alt="Typescript" width="25"/>
 
-- Configure the top-level `parserOptions` property like this:
+##### Vite - [Documentação](https://vitejs.dev/guide/) <img src="https://pt.vitejs.dev/logo.svg" alt="Vite" width="25"/>
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+##### Vitest - [Documentação](https://vitest.dev/guide/) <img src="https://user-images.githubusercontent.com/11247099/145112184-a9ff6727-661c-439d-9ada-963124a281f7.png" alt="Vitest" width="25"/>
+
+##### Tailwindcss - [Documentação](https://v2.tailwindcss.com/docs) <img src="https://picperf.io/https://laravelnews.s3.amazonaws.com/images/tailwindcss-1633184775.jpg" alt="Tailwindcss" width="25"/>
+
+## Iniciando o projeto
+
+Após dar o git clone no seu repositório
+
+Em sua IDE de escolha abra o projeto no diretório raiz
+
+Abra o terminal e baixe todas as dependências necessárias
+
+```
+npm i / npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Após ter concluído a instalação das dependências
+
+agora será necessário rodar o seguinte comando
+
+```
+npm run dev
+```
+
+O vite irá subir um servidor local no seguinte endereço
+
+http://localhost:5173/
+
+## Executando os testes com o Vitest
+
+Em sua IDE de escolha abra o projeto no diretório raiz
+
+Abra o terminal e execute o seguinte comando
+
+```
+npm run test
+```
+
+No Terminal será mostrado a execução de todos os testes
