@@ -29,10 +29,10 @@ export function FindNumber({ numbersArray }: FindNumberProps) {
 
   return (
     <>
-      <div className='flex items-center justify-center flex-row mb-6'>
+      <div className='flex flex-wrap items-center justify-center flex-row mb-6'>
         {numbersArray.map((number) =>
           <Label
-            className='flex font-bold mr-2 bg-white w-auto p-2 justify-center rounded-md'
+            className='flex font-bold mr-2 bg-white w-auto p-2 justify-center rounded-md mb-5'
             key={number}
           >
             {String(number)}
