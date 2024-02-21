@@ -1,26 +1,50 @@
-import { generateRandomSequence } from '../utils/generateRandomSequence'
-import { describe, expect, it } from 'vitest'
+import { describe, test, expect } from 'vitest'
+import { generateRandomSequence } from '../utils/generateRandomSequence';
 
-describe('generateRandomSequence', () => {
-  it('returns an empty array if min equals max', () => {
-    const result = generateRandomSequence(10, 10)
-    expect(result).toEqual([])
-  })
+describe("generateRandomSequence", () => {
+  test("should generate a sequence of random numbers between min and max", () => {
+    const min = 1;
+    const max = 10;
+    const count = 5;
+    const sequence = generateRandomSequence(min, max, count);
+    expect(sequence).toHaveLength(count);
+    expect(sequence).toEqual(expect.arrayContaining(sequence));
+    expect(Math.min(...sequence)).toBeGreaterThanOrEqual(min);
+    expect(Math.max(...sequence)).toBeLessThanOrEqual(max);
+  });
 
-  it('returns an array with random numbers between min and max', () => {
-    const result = generateRandomSequence(10, 20)
+  test("should throw an error if count is greater than range", () => {
+    const min = 1;
+    const max = 5;
+    const count = 10;
+    expect(() => generateRandomSequence(min, max, count)).toThrowError(
+      "Não é possível gerar uma sequência com mais números do que o intervalo"
+    );
+  });
 
-    expect(result.length).toBeGreaterThan(0)
-    
-    for (const number of result) {
-      expect(number).toBeGreaterThanOrEqual(10)
-      expect(number).toBeLessThanOrEqual(20)
-    }
-    
-    expect(new Set(result).size).toEqual(result.length)
-    
-    for (let i = 0; i < result.length - 1; i++) {
-      expect(result[i]).toBeLessThan(result[i + 1])
-    }
-  })
-})
+  test("should sort the sequence in ascending order", () => {
+    const min = 1;
+    const max = 10;
+    const count = 5;
+    const sequence = generateRandomSequence(min, max, count);
+    const sorted = [...sequence].sort((a, b) => a - b); 
+    expect(sequence).toEqual(sorted); 
+  });
+
+  test("should swap min and max values if min is greater than max", () => {
+    const min = 10;
+    const max = 1;
+    const count = 5;
+    const sequence = generateRandomSequence(min, max, count);
+    expect(Math.min(...sequence)).toBeGreaterThanOrEqual(max);
+    expect(Math.max(...sequence)).toBeLessThanOrEqual(min);
+  });
+
+  test("should generate a sequence with all possible numbers if count is not specified", () => {
+    const min = 1;
+    const max = 5;
+    const sequence = generateRandomSequence(min, max);
+    expect(sequence).toHaveLength(max - min + 1);
+    expect(sequence).toEqual(expect.arrayContaining([1, 2, 3, 4, 5]));
+  });
+});
